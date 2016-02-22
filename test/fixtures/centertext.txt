@@ -1,0 +1,47 @@
+.
+s
+.
+<p>s</p>
+.
+
+.
+some ->centered text<- in a paragraph
+.
+<p>some <span style="text-align: center;">centered text</span> in a paragraph</p>
+.
+
+.
+clearly not a ->centered text definition
+.
+<p>clearly not a -&gt;centered text definition</p>
+.
+
+.
+more text that is not centered<-
+.
+<p>more text that is not centered&lt;-</p>
+.
+
+.
+text that spans ->multiple
+lines<- should not be centered
+.
+<p>text that spans -&gt;multiple
+lines&lt;- should not be centered</p>
+.
+
+.
+## -> Centered Heading <-
+.
+<h2><span style="text-align: center;"> Centered Heading </span></h2>
+.
+
+coverage
+.
+*~f
+.
+<p>*~f</p>
+.
+
+clean up init (constructor)
+remove icon
