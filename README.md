@@ -1,8 +1,8 @@
-# markdown-it-centertext
+# markdown-it-center-text
 
-[![Build Status](https://img.shields.io/travis/jay-hodgson/markdown-it-centertext/master.svg?style=flat)](https://travis-ci.org/jay-hodgson/markdown-it-centertext)
-[![NPM version](https://img.shields.io/npm/v/markdown-it-centertext.svg?style=flat)](https://www.npmjs.org/package/markdown-it-centertext)
-[![Coverage Status](https://img.shields.io/coveralls/jay-hodgson/markdown-it-centertext/master.svg?style=flat)](https://coveralls.io/r/jay-hodgson/markdown-it-centertext?branch=master)
+[![Build Status](https://img.shields.io/travis/jay-hodgson/markdown-it-center-text/master.svg?style=flat)](https://travis-ci.org/jay-hodgson/markdown-it-center-text)
+[![NPM version](https://img.shields.io/npm/v/markdown-it-center-text.svg?style=flat)](https://www.npmjs.org/package/markdown-it-center-text)
+[![Coverage Status](https://img.shields.io/coveralls/jay-hodgson/markdown-it-center-text/master.svg?style=flat)](https://coveralls.io/r/jay-hodgson/markdown-it-center-text?branch=master)
 
 > Synapse tag plugin for [markdown-it](https://github.com/markdown-it/markdown-it) markdown parser.
 
@@ -15,15 +15,15 @@ __v1.+ requires `markdown-it` v4.+, see changelog.__
 node.js, browser:
 
 ```bash
-npm install markdown-it-centertext --save
-bower install markdown-it-centertext --save
+npm install markdown-it-center-text --save
+bower install markdown-it-center-text --save
 ```
 
 ## Use
 
 ```js
 var md = require('markdown-it')()
-            .use(require('markdown-it-centertext'));
+            .use(require('markdown-it-center-text'));
 
 md.render('->Centered Text<-') // => '<span style="text-align: center;">Centered Text</span>'
 
@@ -36,4 +36,4 @@ package system, module will add itself globally as `window.markdownitCentertext`
 
 
 ## License
-[MIT](https://github.com/jay-hodgson/markdown-it-centertext/blob/master/LICENSE)
+[MIT](https://github.com/jay-hodgson/markdown-it-center-text/blob/master/LICENSE)
