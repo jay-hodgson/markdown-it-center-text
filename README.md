@@ -10,6 +10,7 @@ __v1.+ requires `markdown-it` v4.+, see changelog.__
 
 `->Centered Text<-` => `<span style="text-align: center;">Centered Text</span>`
 
+
 ## Install
 
 node.js, browser:
