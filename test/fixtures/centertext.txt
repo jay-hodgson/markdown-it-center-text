@@ -7,7 +7,7 @@ s
 .
 some ->centered text<- in a paragraph
 .
-<p>some <span style="text-align: center;">centered text</span> in a paragraph</p>
+<p>some <div style="text-align: center;">centered text</div> in a paragraph</p>
 .
 
 .
@@ -33,7 +33,7 @@ lines&lt;- should not be centered</p>
 .
 ## -> Centered Heading <-
 .
-<h2><span style="text-align: center;"> Centered Heading </span></h2>
+<h2><div style="text-align: center;"> Centered Heading </div></h2>
 .
 
 coverage

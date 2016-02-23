@@ -4,11 +4,11 @@
 [![NPM version](https://img.shields.io/npm/v/markdown-it-center-text.svg?style=flat)](https://www.npmjs.org/package/markdown-it-center-text)
 [![Coverage Status](https://img.shields.io/coveralls/jay-hodgson/markdown-it-center-text/master.svg?style=flat)](https://coveralls.io/r/jay-hodgson/markdown-it-center-text?branch=master)
 
-> Synapse tag plugin for [markdown-it](https://github.com/markdown-it/markdown-it) markdown parser.
+> Center text plugin for [markdown-it](https://github.com/markdown-it/markdown-it) markdown parser.
 
 __v1.+ requires `markdown-it` v4.+, see changelog.__
 
-`->Centered Text<-` => `<span style="text-align: center;">Centered Text</span>`
+`->Centered Text<-` => `<div style="text-align: center;">Centered Text</div>`
 
 
 ## Install
@@ -26,7 +26,7 @@ bower install markdown-it-center-text --save
 var md = require('markdown-it')()
             .use(require('markdown-it-center-text'));
 
-md.render('->Centered Text<-') // => '<span style="text-align: center;">Centered Text</span>'
+md.render('->Centered Text<-') // => '<div style="text-align: center;">Centered Text</div>'
 
 ```
 

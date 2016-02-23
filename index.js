@@ -45,14 +45,14 @@ function centertext(state, silent) {
   state.pos = start + 2;
 
   // Earlier we checked !silent, but this implementation does not need it
-  token         = state.push('centertext_open', 'span', 1);
+  token         = state.push('centertext_open', 'div', 1);
   token.markup  = '->';
   token.attrs = [ [ 'style', 'text-align: center;' ] ];
 
   token         = state.push('text', '', 0);
   token.content = content.replace(UNESCAPE_RE, '$1');
 
-  token         = state.push('centertext_close', 'span', -1);
+  token         = state.push('centertext_close', 'div', -1);
   token.markup  = '<-';
 
   state.pos = state.posMax + 2;
