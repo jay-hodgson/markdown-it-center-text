@@ -11,6 +11,12 @@ some ->centered text<- in a paragraph
 .
 
 .
+bold and ->**centered text**<- in a paragraph
+.
+<p>some <div style="text-align: center;"><strong>centered text</strong></div> in a paragraph</p>
+.
+
+.
 clearly not a ->centered text definition
 .
 <p>clearly not a -&gt;centered text definition</p>
