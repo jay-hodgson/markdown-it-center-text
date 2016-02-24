@@ -17,6 +17,13 @@ bold and ->**centered text**<- in a paragraph
 .
 
 .
+bold and **->centered text<-** in a paragraph
+.
+<p>bold and <strong><div style="text-align: center;">centered text</div></strong> in a paragraph</p>
+.
+
+
+.
 clearly not a ->centered text definition
 .
 <p>clearly not a -&gt;centered text definition</p>
@@ -26,12 +33,6 @@ clearly not a ->centered text definition
 more text that is not centered<-
 .
 <p>more text that is not centered&lt;-</p>
-.
-
-.
-## ->Centered Heading<-
-.
-<h2><div style="text-align: center;"> Centered Heading </div></h2>
 .
 
 coverage
