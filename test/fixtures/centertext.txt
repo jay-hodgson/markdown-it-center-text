@@ -13,7 +13,7 @@ some ->centered text<- in a paragraph
 .
 bold and ->**centered text**<- in a paragraph
 .
-<p>some <div style="text-align: center;"><strong>centered text</strong></div> in a paragraph</p>
+<p>bold and <div style="text-align: center;"><strong>centered text</strong></div> in a paragraph</p>
 .
 
 .
@@ -29,15 +29,7 @@ more text that is not centered<-
 .
 
 .
-text that spans ->multiple
-lines<- should not be centered
-.
-<p>text that spans -&gt;multiple
-lines&lt;- should not be centered</p>
-.
-
-.
-## -> Centered Heading <-
+## ->Centered Heading<-
 .
 <h2><div style="text-align: center;"> Centered Heading </div></h2>
 .

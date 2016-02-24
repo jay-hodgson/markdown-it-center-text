@@ -8,18 +8,18 @@ module.exports = function centertext_plugin(md) {
     var token,
         max = state.posMax,
         start = state.pos,
-        marker = state.src.charCodeAt(start),
-        aftermarker = state.src.charCodeAt(start + 1);
+        marker = state.src.charCodeAt(start);
     if (start + 3 >= max) { return false; }
     if (silent) { return false; } // don't run any pairs in validation mode
 
-    state.scanDelims(state.pos, true);
-    if (marker === 0x2D/* - */ && aftermarker === 0x3E/* > */) {
-      // opener
+    if (marker === 45/* - */ &&
+      state.src.charCodeAt(start + 1) === 62/* > */
+      ) {
+      state.scanDelims(state.pos, true);
       token         = state.push('text', '', 0);
-      token.content = String.fromCharCode(marker);
+      token.content = '->';
       state.delimiters.push({
-        marker: marker,
+        marker: token.content,
         jump:   0,
         token:  state.tokens.length - 1,
         level:  state.level,
@@ -27,12 +27,15 @@ module.exports = function centertext_plugin(md) {
         open:   true,
         close:  false
       });
-    } else if (marker === 0x3C/* < */ && aftermarker === 0x2D/* - */) {
-      // closer
+    } else if (marker === 60/* < */ &&
+      state.src.charCodeAt(start + 1) === 45/* - */
+      ) {
+      // found the close marker
+      state.scanDelims(state.pos, true);
       token         = state.push('text', '', 0);
-      token.content = String.fromCharCode(aftermarker);
+      token.content = '<-';
       state.delimiters.push({
-        marker: aftermarker,
+        marker: token.content,
         jump:   0,
         token:  state.tokens.length - 1,
         level:  state.level,
@@ -55,42 +58,48 @@ module.exports = function centertext_plugin(md) {
   //
   function postProcess(state) {
     var i,
-        startDelim,
-        endDelim,
+        foundStart = false,
+        foundEnd = false,
+        delim,
         token,
         delimiters = state.delimiters,
         max = state.delimiters.length;
 
     for (i = 0; i < max; i++) {
-      startDelim = delimiters[i];
-
-      if (startDelim.marker !== 0x2D/* - */) {
-        continue;
+      delim = delimiters[i];
+      if (delim.marker === '->') {
+        foundStart = true;
+      } else if (delim.marker === '<-') {
+        foundEnd = true;
       }
+    }
+    if (foundStart && foundEnd) {
+      for (i = 0; i < max; i++) {
+        delim = delimiters[i];
 
-      if (startDelim.end === -1) {
-        continue;
+        if (delim.marker === '->') {
+          foundStart = true;
+          token         = state.tokens[delim.token];
+          token.type    = 'centertext_open';
+          token.tag     = 'div';
+          token.nesting = 1;
+          token.markup  = '->';
+          token.content = '';
+          token.attrs = [ [ 'style', 'text-align: center;' ] ];
+        } else if (delim.marker === '<-') {
+          if (foundStart) {
+            token         = state.tokens[delim.token];
+            token.type    = 'centertext_close';
+            token.tag     = 'div';
+            token.nesting = -1;
+            token.markup  = '<-';
+            token.content = '';
+          }
+        }
       }
-
-      endDelim = delimiters[startDelim.end];
-
-      token         = state.tokens[startDelim.token];
-      token.type    = 'centertext_open';
-      token.tag     = 'centertext';
-      token.nesting = 1;
-      token.markup  = '->';
-      token.content = '';
-      token.attrs = [ [ 'style', 'text-align: center;' ] ];
-
-      token         = state.tokens[endDelim.token];
-      token.type    = 'centertext_close';
-      token.tag     = 'centertext';
-      token.nesting = -1;
-      token.markup  = '<-';
-      token.content = '';
     }
   }
 
   md.inline.ruler.before('emphasis', 'centertext', tokenize);
-  md.inline.ruler.after('emphasis', 'centertext', postProcess);
+  md.inline.ruler2.before('emphasis', 'centertext', postProcess);
 };
