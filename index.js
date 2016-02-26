@@ -9,7 +9,7 @@ module.exports = function centertext_plugin(md) {
         max = state.posMax,
         start = state.pos,
         marker = state.src.charCodeAt(start);
-    if (start + 3 >= max) { return false; }
+    if (start + 1 > max) { return false; }
     if (silent) { return false; } // don't run any pairs in validation mode
 
     if (marker === 45/* - */ &&

@@ -35,6 +35,12 @@ more text that is not centered<-
 <p>more text that is not centered&lt;-</p>
 .
 
+.
+## ->Centered heading<-
+.
+<h2><div style="text-align: center;">Centered heading</div></h2>
+.
+
 coverage
 .
 *~f
