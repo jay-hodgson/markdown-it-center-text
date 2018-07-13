@@ -8,7 +8,7 @@
 
 __v1.+ requires `markdown-it` v4.+, see changelog.__
 
-`->Centered Text<-` => `<div style="text-align: center;">Centered Text</div>`
+`->Centered Text<-` => `<div class="text-align-center">Centered Text</div>`
 
 
 ## Install
@@ -26,7 +26,7 @@ bower install markdown-it-center-text --save
 var md = require('markdown-it')()
             .use(require('markdown-it-center-text'));
 
-md.render('->Centered Text<-') // => '<div style="text-align: center;">Centered Text</div>'
+md.render('->Centered Text<-') // => '<div class="text-align-center">Centered Text</div>'
 
 ```
 

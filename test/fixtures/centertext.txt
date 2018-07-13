@@ -7,19 +7,19 @@ s
 .
 some ->centered text<- in a paragraph
 .
-<p>some <div style="text-align: center;">centered text</div> in a paragraph</p>
+<p>some <div class="text-align-center">centered text</div> in a paragraph</p>
 .
 
 .
 bold and ->**centered text**<- in a paragraph
 .
-<p>bold and <div style="text-align: center;"><strong>centered text</strong></div> in a paragraph</p>
+<p>bold and <div class="text-align-center"><strong>centered text</strong></div> in a paragraph</p>
 .
 
 .
 bold and **->centered text<-** in a paragraph
 .
-<p>bold and <strong><div style="text-align: center;">centered text</div></strong> in a paragraph</p>
+<p>bold and <strong><div class="text-align-center">centered text</div></strong> in a paragraph</p>
 .
 
 
@@ -38,7 +38,7 @@ more text that is not centered<-
 .
 ## ->Centered heading<-
 .
-<h2><div style="text-align: center;">Centered heading</div></h2>
+<h2><div class="text-align-center">Centered heading</div></h2>
 .
 
 coverage
